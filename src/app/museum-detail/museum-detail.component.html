@@ -1,0 +1,75 @@
+<!-- museum detail -->
+<div class="row">
+  <div class="col-3 mb-3">
+    <h1>🏛️ Open Museum</h1>
+  </div>
+  <div class="col-9 mb-3">
+    <article class="card mb-3 shadow-sm">
+      <div class="card-body">
+        <div class="">
+          <!-- PHOTO -->
+        </div>
+        <!-- Localisation -->
+        <div class="row mb-2">
+          <div class="col-1">
+            📍
+          </div>
+          <div class="col-10">
+            <p class="card-text">
+              {{museumAdress}}<br>
+              {{museumZipCode}} {{museumCity | titlecase}}
+            </p>
+          </div>
+        </div>
+        <!-- Phone -->
+        <div class="row mb-2">
+          <div class="col-1">
+            📞
+          </div>
+          <div class="col-10">
+            <p class="card-text"><a href="tel:{{museumPhone}}">{{museumPhone}}</a></p>
+          </div>
+        </div>
+        <!-- Website -->
+        <div class="row mb-2">
+          <div class="col-1">
+            💻
+          </div>
+          <div class="col-10">
+            <p class="card-text">
+              <a href="https://{{museumWebSite}}" target="blank">{{museumWebSite}}</a>
+            </p>
+          </div>
+        </div>
+        <!-- Opening hours -->
+        <div class="row mb-2">
+          <div class="col-1">
+            🕒
+          </div>
+          <div class="col-10">
+            <p class="card-text">{{museumOpening}}</p>
+          </div>
+        </div>
+        <!-- View detail -->
+        <div class="row mb-2">
+          <div class="col-1">
+            ➕
+          </div>
+        </div>
+      </div>
+    </article>
+    <div class="row mb-2">
+      <div class="col-9 mb-3">
+        <div class="row mb-2">
+          <div class="col-1">
+            👈
+          </div>
+          <div class="col-10">
+            <p class="card-text"><a routerLink="/">Back to museum list</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<h2 class="h2">{{museumName}}</h2>
