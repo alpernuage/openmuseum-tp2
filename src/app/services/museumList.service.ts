@@ -40,7 +40,7 @@ export class MuseumListService {
       nomdep: "ALPES DE HAUTE PROVENCE"
     },
     {
-      id:3,
+      id: 3,
       periode_ouverture: "Ouvert du 1er janvier au 14 avril du mercredi au lundi de 10h \u00e0 12h30 et de 13h30 \u00e0 17h et \u00e0 partir du 15 avril du mercredi au lundi de 10h \u00e0 12h30 et de 13h30 \u00e0 18h",
       nom_du_musee: "Mus\u00e9e du Pavillon de Vend\u00f4me",
       new_regions: "PROVENCE-ALPES-C\u00d4TE D'AZUR",
@@ -59,7 +59,7 @@ export class MuseumListService {
       nomdep: "BOUCHES DU RHONE"
     },
     {
-      id:4,
+      id: 4,
       periode_ouverture: "Ouvert du mercredi au lundi de 10h \u00e0 18h",
       nom_du_musee: "Mus\u00e9e du Palais Lascaris",
       new_regions: "PROVENCE-ALPES-C\u00d4TE D'AZUR",
@@ -78,7 +78,7 @@ export class MuseumListService {
       nomdep: "ALPES-MARITIMES"
     },
     {
-      id:5,
+      id: 5,
       periode_ouverture: "Ouvert du mercredi au lundi de septembre \u00e0 juin de 15h \u00e0 18h et en  juillet-ao\u00fbt de 16h \u00e0 19h",
       nom_du_musee: "Mus\u00e9e Ciotaden",
       new_regions: "PROVENCE-ALPES-C\u00d4TE D'AZUR",
@@ -97,7 +97,7 @@ export class MuseumListService {
       nomdep: "BOUCHES DU RHONE"
     },
     {
-      id:6,
+      id: 6,
       periode_ouverture: "Ouvert lundi, mercredi au dimanche apr\u00e8s-midi d'avril \u00e0 octobre de 10h \u00e0 12h et de 15h \u00e0 18h, de novembre \u00e0 mars de 10h \u00e0 12h et de 14h \u00e0 17h",
       nom_du_musee: "Mus\u00e9e D\u00e9partemental du Cartonnage et de l'Imprimerie",
       new_regions: "PROVENCE-ALPES-C\u00d4TE D'AZUR",
@@ -116,7 +116,7 @@ export class MuseumListService {
       nomdep: "VAUCLUSE"
     },
     {
-      id:7,
+      id: 7,
       periode_ouverture: "Ouvert du mardi au samedi de 10h \u00e0 12h et de 14h \u00e0 17h30,  visite \u00e0 10h, 14h et 16h",
       nom_du_musee: "Mus\u00e9e du V\u00eatement Proven\u00e7al (Jean Aicard)",
       new_regions: "PROVENCE-ALPES-C\u00d4TE D'AZUR",
@@ -135,7 +135,7 @@ export class MuseumListService {
       nomdep: "VAR"
     },
     {
-      id:8,
+      id: 8,
       periode_ouverture: "Ouvert d'octobre \u00e0 mai du mercredi au lundi de 10h \u00e0 18h et de juin \u00e0 septembre tous les jours de 10h \u00e0 18h",
       nom_du_musee: "Mus\u00e9e National de la Marine de Toulon",
       new_regions: "PROVENCE-ALPES-C\u00d4TE D'AZUR",
@@ -153,7 +153,7 @@ export class MuseumListService {
       nomdep: "VAR"
     },
     {
-      id:9,
+      id: 9,
       periode_ouverture: "Ouvert du mardi au dimanche de 9h \u00e0 18h du 1er mars au 30 novembre et de 9h \u00e0 17h du 1er d\u00e9cembre au 28 f\u00e9vrier",
       nom_du_musee: "Mus\u00e9um d'Histoire Naturelle de Toulon et du Var",
       new_regions: "PROVENCE-ALPES-C\u00d4TE D'AZUR",
@@ -171,7 +171,7 @@ export class MuseumListService {
       nomdep: "VAR"
     },
     {
-      id:10,
+      id: 10,
       periode_ouverture: "Ouvert du mardi au dimanche de 11h \u00e0 18h et du 23 juin au 15 octobre de 10h \u00e0 18h",
       nom_du_musee: "Mus\u00e9e des Beaux-Arts Jules Ch\u00e9ret",
       new_regions: "PROVENCE-ALPES-C\u00d4TE D'AZUR",
@@ -190,7 +190,7 @@ export class MuseumListService {
       nomdep: "ALPES-MARITIMES"
     },
     {
-      id:11,
+      id: 11,
       periode_ouverture: "Ouvert du mardi au dimanche de 10h \u00e0 18h",
       nom_du_musee: "Mus\u00e9um d'Histoire Naturelle",
       new_regions: "PROVENCE-ALPES-C\u00d4TE D'AZUR",
@@ -209,7 +209,7 @@ export class MuseumListService {
       nomdep: "ALPES-MARITIMES"
     },
     {
-      id:12,
+      id: 12,
       periode_ouverture: "Ouvert du mercredi au lundi de 10h \u00e0 18h",
       nom_du_musee: "Mus\u00e9e D\u00e9partemental de l'Arles Antique",
       new_regions: "PROVENCE-ALPES-C\u00d4TE D'AZUR",
@@ -223,6 +223,22 @@ export class MuseumListService {
       cp: "13635",
       date_appellation: "01/02/2003",
       nomdep: "BOUCHES DU RHONE"
-    }]
+    }];
 
+  getMuseumByRefMusee(museumRef: string) {
+    const museum = this.museums.find(
+      (s) => {
+        return s.ref_musee === museumRef;
+      }
+    );
+    return museum;
+  }
+  getMuseumByOpening(museumOpening: string) {
+    const museum = this.museums.find(
+      (s) => {
+        return s.ref_musee === museumOpening;
+      }
+    );
+    return museum;
+  }
 }

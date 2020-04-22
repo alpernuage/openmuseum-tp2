@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
 import { MuseumListService } from '../services/museumList.service';
 
 @Component({
@@ -7,18 +8,21 @@ import { MuseumListService } from '../services/museumList.service';
   styleUrls: ['./museum-detail.component.css']
 })
 export class MuseumDetailComponent implements OnInit {
-  @Input() museumId : number;
-  @Input() museumName : string;
-  @Input() museumAdress : string;
-  @Input() museumZipCode : string;
-  @Input() museumCity : string;
-  @Input() museumPhone : string;
-  @Input() museumWebSite : string;
-  @Input() museumOpening : string;
+  museumRef: string;
+  museumName: string;
+  museumAdress: string;
+  museumZipCode: string;
+  museumCity: string;
+  museumPhone: string;
+  museumWebSite: string;
+  museumOpening: string;
 
-  constructor(private museumListService: MuseumListService) { }
+  constructor(private museumListService: MuseumListService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    const museumRef = this.route.snapshot.params['museumRef'];
+    this.museumName = this.museumListService.getMuseumByRefMusee(museumRef).nom_du_musee;
+    this.museumOpening = this.museumListService.getMuseumByOpening(museumRef).periode_ouverture;
   }
 
 }

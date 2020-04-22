@@ -45,7 +45,7 @@
         🕒
       </div>
       <div class="col-10">
-        <p class="card-text">{{museumOpening}}</p>
+        <p class="card-text"><a [routerLink]="['museum/', museumOpening]"></a>{{museumOpening}}</p>
       </div>
     </div>
     <!-- View detail -->
@@ -54,7 +54,7 @@
         ➕
       </div>
       <div class="col-10">
-        <p class="card-text"><a routerLink="museumDetail">View details</a></p>
+        <p class="card-text"><a [routerLink]="['museum/', museumRef]">View details</a></p>
       </div>
     </div>
 
