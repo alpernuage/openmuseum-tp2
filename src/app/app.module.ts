@@ -12,11 +12,13 @@ import { SingleMuseumComponent } from './single-museum/single-museum.component';
 import { AddMuseumComponent } from './add-museum/add-museum.component';
 import { MuseumDetailComponent } from './museum-detail/museum-detail.component';
 
-const appRoutes:Routes = [
-  {path: '', component: MuseumListComponent},
-  {path: 'addMuseum', component: AddMuseumComponent},
-  {path: 'singleMuseum', component: SingleMuseumComponent},
-  {path: 'museumDetail', component: MuseumDetailComponent},
+const appRoutes: Routes = [
+  { path: '', component: MuseumListComponent },
+  { path: 'addMuseum', component: AddMuseumComponent },
+  { path: 'singleMuseum', component: SingleMuseumComponent },
+  { path: 'museum/:museumRef', component: MuseumDetailComponent },
+  { path: 'museum/:museumOpening', component: MuseumDetailComponent },
+  { path: '**', redirectTo: 'NOT FOUND' },
 ]
 
 @NgModule({
