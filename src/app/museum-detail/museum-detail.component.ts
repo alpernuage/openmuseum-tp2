@@ -7,6 +7,7 @@ import { MuseumListService } from '../services/museumList.service';
   templateUrl: './museum-detail.component.html',
   styleUrls: ['./museum-detail.component.css']
 })
+
 export class MuseumDetailComponent implements OnInit {
   museumRef: string;
   museumName: string;
@@ -30,6 +31,7 @@ export class MuseumDetailComponent implements OnInit {
     this.museumWebSite = this.museumListService.getMuseumByOpening(museumRef).siteweb;
     this.museumOpening = this.museumListService.getMuseumByOpening(museumRef).periode_ouverture;
     this.museumFax = this.museumListService.getMuseumByOpening(museumRef).fax;
+
   }
 
 }

@@ -12,6 +12,10 @@ import { SingleMuseumComponent } from './single-museum/single-museum.component';
 import { AddMuseumComponent } from './add-museum/add-museum.component';
 import { MuseumDetailComponent } from './museum-detail/museum-detail.component';
 
+// Import HttpClientModule from @angular/common/http
+import { HttpClientModule } from '@angular/common/http';
+import { MapComponent } from './map/map.component';
+
 const appRoutes: Routes = [
   { path: '', component: MuseumListComponent },
   { path: 'addMuseum', component: AddMuseumComponent },
@@ -28,10 +32,12 @@ const appRoutes: Routes = [
     MuseumListComponent,
     AddMuseumComponent,
     MuseumDetailComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
   providers: [MuseumListService],
   bootstrap: [AppComponent]
