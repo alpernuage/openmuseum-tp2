@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MuseumListService } from '../services/museumList.service';
+import { Museum } from '../models/museum/museum';
 
 @Component({
   selector: 'app-single-museum',
@@ -7,14 +8,16 @@ import { MuseumListService } from '../services/museumList.service';
   styleUrls: ['./single-museum.component.css']
 })
 export class SingleMuseumComponent implements OnInit {
-  @Input() museumRef: string;
-  @Input() museumName: string;
-  @Input() museumAdress: string;
-  @Input() museumZipCode: string;
-  @Input() museumCity: string;
-  @Input() museumPhone: string;
-  @Input() museumWebSite: string;
-  @Input() museumOpening: string;
+  // museum: Museum;
+  @Input() museum: Museum;
+  // @Input() museumRef: string;
+  // @Input() museumName: string;
+  // @Input() museumAdress: string;
+  // @Input() museumZipCode: string;
+  // @Input() museumCity: string;
+  // @Input() museumPhone: string;
+  // @Input() museumWebSite: string;
+  // @Input() museumOpening: string;
 
   constructor(private museumListService: MuseumListService) { }
 

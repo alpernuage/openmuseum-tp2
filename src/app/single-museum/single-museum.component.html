@@ -1,7 +1,7 @@
 <article class="card mb-3 shadow-sm">
   <div class="card-body">
     <div class="card-title">
-      <h2 class="h4 mb-3">{{museumName}}</h2>
+      <h2 class="h4 mb-3">{{museum.name}}</h2>
     </div>
 
     <div class="">
@@ -14,47 +14,59 @@
       </div>
       <div class="col-10">
         <p class="card-text">
-          {{museumAdress}}<br>
-          {{museumZipCode}} {{museumCity | titlecase}}
+          {{museum.city | titlecase}}
         </p>
       </div>
     </div>
+
+    <!-- Localisation -->
+    <!-- <div class="row mb-2">
+      <div class="col-1">
+        📍
+      </div>
+      <div class="col-10">
+        <p class="card-text">
+          {{museum.addess}}<br>
+          {{museum.cp}} {{museum.city | titlecase}}
+        </p>
+      </div>
+    </div> -->
     <!-- Phone -->
-    <div class="row mb-2">
+    <!-- <div class="row mb-2">
       <div class="col-1">
         📞
       </div>
       <div class="col-10">
-        <p class="card-text"><a href="tel:{{museumPhone}}">{{museumPhone}}</a></p>
+        <p class="card-text"><a href="tel:{{museum.telephone}}">{{museum.telephone}}</a></p>
       </div>
-    </div>
+    </div> -->
     <!-- Website -->
-    <div class="row mb-2">
+    <!-- <div class="row mb-2">
       <div class="col-1">
         💻
       </div>
       <div class="col-10">
         <p class="card-text">
-          <a href="https://{{museumWebSite}}" target="blank">{{museumWebSite}}</a>
+          <a href="https://{{museum.website}}" target="blank">{{museum.website}}</a>
         </p>
       </div>
-    </div>
+    </div> -->
     <!-- Opening hours -->
-    <div class="row mb-2">
+    <!-- <div class="row mb-2">
       <div class="col-1">
         🕒
       </div>
       <div class="col-10">
-        <p class="card-text"><a [routerLink]="['museum/', museumOpening]"></a>{{museumOpening}}</p>
+        <p class="card-text"><a [routerLink]="['museums/', museum.opening]"></a>{{museum.opening}}</p>
       </div>
-    </div>
+    </div> -->
     <!-- View detail -->
     <div class="row mb-2">
       <div class="col-1">
         ➕
       </div>
       <div class="col-10">
-        <p class="card-text"><a [routerLink]="['museum/', museumRef]">View details</a></p>
+        <p class="card-text"><a [routerLink]="['museum/', museum.id]">View details</a></p>
       </div>
     </div>
 

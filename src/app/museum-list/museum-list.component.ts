@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MuseumListService } from '../services/museumList.service'
+import { DataService } from '../services/data.service';
+import { Museum } from '../models/museum/museum';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +8,19 @@ import { MuseumListService } from '../services/museumList.service'
   styleUrls: ['./museum-list.component.css']
 })
 export class MuseumListComponent implements OnInit {
-  museums: any[];
+  museums: Museum[];
 
-  constructor(private museumListService: MuseumListService) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.museums = this.museumListService.museums;
+    this.dataService.fetchMuseums()
+      .subscribe(res => {
+        this.museums = res
+        console.log(res);
+      },
+        error => {
+          console.log("error");
+        });
+    this.dataService.fetchMuseums();
   }
-
 }
